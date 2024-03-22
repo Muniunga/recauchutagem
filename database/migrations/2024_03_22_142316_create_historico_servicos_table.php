@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cliente_id');
             $table->unsignedBigInteger('servico_id');
-            $table->unsignedBigInteger('metodo_de_pagamento_id');
+            $table->unsignedBigInteger('metodo_pagamento_id');
             $table->dateTime('data_servico');
             $table->string('funcionario')->nullable();
             $table->text('observacoes')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->foreign('servico_id')->references('id')->on('servicos');
-            $table->foreign('metodo_de_pagamento_id')->references('id')->on('metodos_de_pagamento');
+            $table->foreign('metodo_pagamento_id')->references('id')->on('metodo_pagamento');
         });
     }
 
